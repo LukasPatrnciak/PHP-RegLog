@@ -1,0 +1,529 @@
+/*
+== LukasPatrnciak ==
+Filename: styles.css
+Author: Lukas Patrnciak
+www.lukaspatrnciak.sk
+
+(C) 2018 Lukáš Patrnčiak
+
+/* left: 0; = float: left;
+   right: 0; = float: right;
+*/
+
+/*
+* General Settings
+*/
+html { 
+    height: 100%; 
+    width: 100%; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+	color: #000000;
+    font-size: 15px;
+	color: #000000;
+	font-weight: 400;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    color: #e4e671;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+h2, h3, h4, h5 {
+    color: #3f3f3f;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+p {
+    font-family: "Courier New", Courier, monospace;
+}
+
+input {
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    text-transform: uppercase;
+}
+
+input[type=submit] {
+    cursor: pointer;
+    font-size: 15px;
+    color: #ffffff;
+    text-transform: uppercase;
+    border: 2px solid #000000;
+    background-color: #000000;
+}
+
+input[type=submit]:hover {
+    background-color: #e4e671;
+    color: #ffffff;
+    border: 2px solid #e4e671;
+}
+
+textarea {
+    background-color: #ffffff;
+    font-size: 15px;
+    border: 2px solid #000000;
+    text-transform: uppercase;
+}
+
+.container {
+    position: relative;
+    margin: auto;
+    width: 85%;
+}
+
+/* errorMessage
+ * okMessage Box 
+ */ 
+.messages {
+    text-align: center;
+}
+.errorMessage {
+    color: #d80000;
+}
+
+.okMessage {
+    color: #309700;
+}
+
+/* 
+ * Navigation 
+ */
+.navigation {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    width: 100%;
+    height: 70px;
+    line-height: normal;
+    font-size: 15px;
+}
+
+.navigationLogo h1 {
+    margin: 0; 
+    font-size: 60px;
+    text-align: center;
+}
+
+.navigationLogo a {
+    color: #e4e671;
+}
+
+.navigationMenu {
+    position: absolute;
+    text-decoration: none;
+    padding-top: 12px;
+    height: 60px;
+    left: -40px;
+}
+
+.navigationMenu ul {
+    list-style: none;
+}
+
+.navigationMenu li {
+    display: inline-block;
+    margin-right: 35px;
+}
+
+.navigationMenu li a {
+    text-transform: uppercase;
+    color: #e4e671;
+}
+
+.navigationMenu li a:hover {
+    font-weight: bold;
+}
+
+/* 
+ * Language Menu 
+ */ 
+.dropdownLang {
+    position: absolute;
+    padding-top: 10px;
+    height: 60px;
+    right: 0;
+}
+
+.dropdownLangButton {
+    height: 50px;
+    border: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.dropdownLangButton:hover {
+    font-weight: bold;
+}
+
+.dropdownLangContent {
+    position: absolute; /* aby sa button nepohyboval pri nabehnuti kurzoru */
+    display: none;
+    z-index: 1;
+}
+
+.dropdownLang:hover .dropdownLangContent { /* Ked sa namieri kurzorom na button (cele div), aby sa obsah zobrazil po namiereni, kedze normalne je zakazany */
+    display: block;
+    text-align: center;
+}
+
+.dropdownLangContent input[type=submit] {
+    height: 35px;
+    border: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0);
+    width: 50px;
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+.dropdownLangContent input[value=sk]{
+    background-image: url('../images/icons/sk.png');
+    background-repeat: no-repeat;
+    background-size: 50px 35px;
+}
+
+.dropdownLangContent input[value=en]{
+    background-image: url('../images/icons/en.png');
+    background-repeat: no-repeat;
+    background-size: 50px 35px;
+}
+
+.dropdownLangContent input[value=de]{
+    background-image: url('../images/icons/de.png');
+    background-repeat: no-repeat;
+    background-size: 50px 35px;
+}
+
+/* 
+ * mainHeader
+ */
+.mainHeader {
+    height: 100%;
+    background-image: url('../images/header.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+    z-index: 0;
+}
+
+.headerOpacity {
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+}
+
+.headerContent {
+    position: relative;
+    top: 260px;
+    width: 460px;
+}
+
+.headerContent h1 {
+    color: #feffac;
+    font-size: 30px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.headerContent p {
+    color: #ffffff;
+    font-size: 16px;
+    text-align: justify;
+    color: #ffffff;
+}
+
+.headerContent a {
+    border: 1px solid #e4e671;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #e4e671;
+    background-color: rgba(0, 0, 0, 0);
+    text-transform: uppercase;
+}
+
+.headerContent a:hover {
+    background-color: #e4e671;
+    color: #000000;
+}
+
+/* 
+ * pageHeader
+ */
+.pageHeader {
+    width: 100%;
+    z-index: 0;
+    background-color: #f2f2f2;
+    height: 190px;
+}
+
+.pageHeaderContentLeft {
+    position: absolute;
+    left: 0;
+}
+
+.pageHeaderContent h1 {
+    color: black;
+    font-size: 20px;
+    padding-top: 100px;
+}
+
+.pageHeaderContentRight {
+    position: absolute;
+    right: 0;
+}
+
+/* 
+ * Content 
+ */
+.content {
+    width: 100%;
+}
+
+#about {
+    height: 45%;
+    padding-bottom: 20px;
+}
+
+#about h1 {
+    text-align: center;
+}
+
+.firstAboutBox {
+    position: absolute;
+    width: 500px;
+    text-align: justify;
+    left: 0;
+}
+
+.secondAboutBox {
+    position: absolute;
+    width: 310px;
+    right: 0;
+}
+
+.contact {
+    position: relative;
+    height: 50%;
+}
+
+.contact h1 {
+    text-align: center;
+}
+
+.contactCenter {
+    position: relative;
+    width: 38%;
+    margin: auto;
+}
+
+.contactCenter ul {
+    list-style: none;
+}
+
+.contactCenter input {
+    width: 400px;
+    height: 55px;
+}
+
+.contactCenter input[type=text] {
+    text-transform: none;
+}
+
+.contactCenter input[type=email] {
+    text-transform: none;
+}
+
+.contactCenter input[type=submit] {
+    width: 405px;
+    height: 55px;
+}
+
+.contactCenter textarea {
+    width: 400px;
+    height: 200px;
+    text-transform: none;
+}
+
+.contactCenter li {
+    padding-top: 10px;
+}
+
+.contactLeft {
+    position: absolute;
+    left: 0;
+}
+
+.contactLeft p {
+    text-align: left;
+}
+
+.contactLeft img {
+    width: 17x;
+    height: 17px;
+    padding-right: 10px;
+}
+
+.contactRight {
+    position: absolute;
+    right: 0;
+    z-index: 500;
+}
+
+.contactRight img {
+    margin-top: 25px;
+    width: 60px;
+    height: 60px;
+    display: block;
+}
+
+#references {
+    position: relative;
+    margin-top: 40px;
+    height: 55%;
+}
+
+#references h1 {
+    text-align: center;
+}
+
+#references img {
+    width: 400px;
+    height: 600px;
+    margin-left: 20px;
+    margin-top: 20px;
+    border: 1px solid #000000;
+}
+
+.loginRegister h1 {
+    text-align: center;
+}
+
+.login {
+    text-align: center;
+}
+
+.login ul {
+    list-style: none;
+}
+
+.login li {
+    padding-top: 10px;
+}
+
+.login input {
+    width: 600px;
+    height: 55px;
+}
+
+.login input[type=text] {
+    text-transform: none;
+}
+
+.login input[type=password] {
+    text-transform: none;
+}
+
+.register {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.register input {
+    width: 600px;
+    height: 55px;
+}
+
+.register input[type=text] {
+    text-transform: none;
+}
+
+.register input[type=password] {
+    text-transform: none;
+}
+
+.register input[type=email] {
+    text-transform: none;
+}
+
+.register ul {
+    list-style: none;
+}
+
+.register li {
+    padding-top: 10px;
+}
+
+.loggedIn {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.loggedIn input {
+    width: 600px;
+    height: 55px;
+}
+
+.loggedIn ul {
+    list-style: none;
+}
+
+.loggedIn li {
+    padding-top: 10px;
+}
+
+/* 
+ * Footer 
+ */
+.footer {
+    position: relative;
+    width: 100%;
+    height: 270px;
+    background-color: #f2f2f2;
+}
+
+.footerContent {
+    padding-top: 90px;
+}
+
+.footerContentLeft {
+    position: absolute;
+    left: 0;
+    text-transform: uppercase;
+}
+
+.footerContentLeft h1 {
+    line-height: 100%;
+    font-weight: 10;
+    width: 230px;
+    margin: 0;
+    color: #505050;
+}
+
+.footerContentLeft p {
+    color: #4f4f4f;
+    margin: 0;
+    font-size: 35px;
+}
+
+.footerContentRight {
+    position: absolute;
+    right: 0;
+}
+
+.footerContentRight p {
+    font-size: 25px;
+}
